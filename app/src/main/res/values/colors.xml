@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="military_darker">#050B14</color>
+    <color name="military_dark">#0B1624</color>
+    <color name="military_surface">#102238</color>
+    <color name="military_line">#274A6D</color>
+
+    <color name="fap_blue">#2E7DD1</color>
+    <color name="fap_blue_light">#7FB8F0</color>
+    <color name="fap_blue_dark">#194E82</color>
+
+    <color name="air_blue">#8CC6F0</color>
+    <color name="text_primary">#EAF2FA</color>
+    <color name="text_secondary">#A9C1D6</color>
+
+    <color name="priority_high">#C0392B</color>
+    <color name="priority_medium">#2E7DD1</color>
+    <color name="priority_low">#3E8E6E</color>
+    <color name="priority_academic">#8E44AD</color>
+</resources>

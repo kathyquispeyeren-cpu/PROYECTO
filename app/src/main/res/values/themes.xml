@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.INFORMATICA" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/fap_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/air_blue</item>
+        <item name="colorOnSecondary">@color/military_dark</item>
+        <item name="android:windowBackground">@drawable/bg_military</item>
+        <item name="android:statusBarColor">@color/military_darker</item>
+        <item name="android:navigationBarColor">@color/military_darker</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:colorAccent">@color/fap_blue</item>
+    </style>
+
+    <style name="Theme.INFORMATICA" parent="Base.Theme.INFORMATICA" />
+</resources>

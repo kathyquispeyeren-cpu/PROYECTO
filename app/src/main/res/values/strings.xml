@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Agenda Virtual FAP</string>
+
+    <string name="emblem_description">Escudo de la Escuela de Suboficiales de la Fuerza Aérea del Perú</string>
+    <string name="fuerza_aerea">FUERZA AÉREA DEL PERÚ</string>
+    <string name="escuela_esofa">ESCUELA DE SUBOFICIALES — ESOFA</string>
+    <string name="agenda_virtual">AGENDA VIRTUAL</string>
+    <string name="label_apellidos">APELLIDOS Y NOMBRES</string>
+    <string name="hint_apellidos">Ej. Pérez García Juan</string>
+    <string name="label_numero_serie">NÚMERO DE SERIE</string>
+    <string name="hint_numero_serie">Ej. 123456</string>
+    <string name="ingresar_sistema">INGRESAR AL SISTEMA</string>
+    <string name="uso_exclusivo">USO EXCLUSIVO DEL PERSONAL FAP</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+
+    <string name="operador_format">OPERADOR: %1$s  •  SERIE: %2$s</string>
+    <string name="registros_format">REGISTROS: %1$d</string>
+    <string name="nueva_nota">+ NUEVA NOTA</string>
+    <string name="ordenar_fecha">ORDENAR POR FECHA</string>
+    <string name="ordenar_prioridad">ORDENAR POR PRIORIDAD</string>
+    <string name="sin_registros">SIN REGISTROS EN LA AGENDA\nPRESIONE «NUEVA NOTA» PARA COMENZAR</string>
+    <string name="item_hint">MANTENER PRESIONADO PARA ELIMINAR • TOCAR PARA EDITAR</string>
+
+    <string name="dialog_nueva">NUEVA NOTA</string>
+    <string name="dialog_editar">EDITAR NOTA</string>
+    <string name="label_asunto">ASUNTO / TÍTULO</string>
+    <string name="hint_asunto">Ej. Inspección de hangar</string>
+    <string name="label_detalle">DETALLE</string>
+    <string name="hint_detalle">Describa el registro…</string>
+    <string name="label_prioridad">PRIORIDAD</string>
+    <string name="prioridad_importante">IMPORTANTE</string>
+    <string name="prioridad_media">MEDIA</string>
+    <string name="prioridad_baja">BAJA</string>
+    <string name="prioridad_academico">ACADÉMICO</string>
+    <string name="guardar">GUARDAR</string>
+    <string name="cancelar">CANCELAR</string>
+    <string name="eliminar">ELIMINAR</string>
+    <string name="eliminar_titulo">ELIMINAR REGISTRO</string>
+    <string name="eliminar_mensaje">¿Confirma la eliminación de \"%1$s\"?</string>
+    <string name="registro_eliminado">Registro eliminado</string>
+
+    <string name="error_asunto">Ingrese el asunto</string>
+    <string name="error_detalle">Ingrese el detalle</string>
+    <string name="error_serie">Ingrese los 6 dígitos del número de serie</string>
+</resources>
