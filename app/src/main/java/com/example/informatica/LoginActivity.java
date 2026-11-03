@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        if (serie.length() != 6) {
+        if (serie.length() < 4) {
             etSerie.setError(getString(R.string.error_serie));
             etSerie.requestFocus();
             return;
