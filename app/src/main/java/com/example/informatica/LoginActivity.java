@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +18,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etApellidos;
     private EditText etSerie;
+    private LinearLayout layoutRegistration;
+    private LinearLayout layoutWelcome;
+    private TextView tvRegisteredName;
+    private TextView tvRegisteredCode;
+    private Button btnRegistrar;
+    private Button btnIngresar;
+    private TextView tvResetStudent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,34 +33,51 @@ public class LoginActivity extends AppCompatActivity {
 
         etApellidos = findViewById(R.id.etApellidos);
         etSerie = findViewById(R.id.etSerie);
-        Button btnIngresar = findViewById(R.id.btnIngresar);
+        layoutRegistration = findViewById(R.id.layoutRegistration);
+        layoutWelcome = findViewById(R.id.layoutWelcome);
+        tvRegisteredName = findViewById(R.id.tvRegisteredName);
+        tvRegisteredCode = findViewById(R.id.tvRegisteredCode);
+        btnRegistrar = findViewById(R.id.btnRegistrar);
+        btnIngresar = findViewById(R.id.btnIngresar);
+        tvResetStudent = findViewById(R.id.tvResetStudent);
 
         SharedPreferences session = getSharedPreferences("fap_session", MODE_PRIVATE);
+        checkSessionState(session);
+
+        btnRegistrar.setOnClickListener(v -> registrarAlumno(session));
+        btnIngresar.setOnClickListener(v -> ingresarAlSistema());
+        tvResetStudent.setOnClickListener(v -> reiniciarRegistro(session));
+    }
+
+    private void checkSessionState(SharedPreferences session) {
         String apellidos = session.getString("apellidos", null);
         String serie = session.getString("serie", null);
 
-        if (apellidos != null) {
-            etApellidos.setText(apellidos);
+        if (apellidos != null && serie != null) {
+            // Already registered -> Show welcome with name and INGRESAR button
+            layoutRegistration.setVisibility(View.GONE);
+            layoutWelcome.setVisibility(View.VISIBLE);
+            tvRegisteredName.setText(apellidos);
+            tvRegisteredCode.setText("Código: " + serie);
+        } else {
+            // Not registered -> Show registration form
+            layoutRegistration.setVisibility(View.VISIBLE);
+            layoutWelcome.setVisibility(View.GONE);
         }
-        if (serie != null) {
-            etSerie.setText(serie);
-        }
-
-        btnIngresar.setOnClickListener(v -> validarIngreso(session));
     }
 
-    private void validarIngreso(SharedPreferences session) {
+    private void registrarAlumno(SharedPreferences session) {
         String apellidos = etApellidos.getText().toString().trim();
         String serie = etSerie.getText().toString().trim();
 
         if (TextUtils.isEmpty(apellidos)) {
-            etApellidos.setError("Ingrese sus apellidos");
+            etApellidos.setError("Ingrese los apellidos y nombres del alumno");
             etApellidos.requestFocus();
             return;
         }
 
         if (apellidos.length() < 3) {
-            etApellidos.setError("Ingrese un apellido válido");
+            etApellidos.setError("Ingrese un nombre válido");
             etApellidos.requestFocus();
             return;
         }
@@ -69,5 +96,17 @@ public class LoginActivity extends AppCompatActivity {
 
         startActivity(new Intent(LoginActivity.this, MainActivity.class));
         finish();
+    }
+
+    private void ingresarAlSistema() {
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        finish();
+    }
+
+    private void reiniciarRegistro(SharedPreferences session) {
+        session.edit().clear().apply();
+        etApellidos.setText("");
+        etSerie.setText("");
+        checkSessionState(session);
     }
 }

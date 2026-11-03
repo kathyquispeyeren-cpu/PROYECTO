@@ -62,68 +62,143 @@
             android:layout_marginTop="14dp"
             android:background="@color/fap_blue" />
 
-        <TextView
+        <!-- Registration Form (Visible when not registered) -->
+        <LinearLayout
+            android:id="@+id/layoutRegistration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:letterSpacing="0.1"
-            android:text="@string/label_apellidos"
-            android:textColor="@color/text_secondary"
-            android:textSize="11sp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etApellidos"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/bg_input"
-            android:hint="@string/hint_apellidos"
-            android:inputType="textCapWords"
-            android:maxLines="1"
-            android:paddingStart="14dp"
-            android:paddingEnd="14dp"
-            android:textColor="@color/text_primary"
-            android:textColorHint="#6E88A0"
-            android:textSize="15sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:letterSpacing="0.1"
+                android:text="@string/label_apellidos"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:textStyle="bold" />
 
-        <TextView
+            <EditText
+                android:id="@+id/etApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input"
+                android:hint="@string/hint_apellidos"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="#6E88A0"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:letterSpacing="0.1"
+                android:text="@string/label_numero_serie"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etSerie"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input"
+                android:hint="@string/hint_numero_serie"
+                android:inputType="text"
+                android:maxLength="12"
+                android:maxLines="1"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="#6E88A0"
+                android:textSize="15sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/bg_button_primary"
+                android:letterSpacing="0.08"
+                android:text="REGISTRAR"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Welcome / Enter Screen (Visible when already registered) -->
+        <LinearLayout
+            android:id="@+id/layoutWelcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:letterSpacing="0.1"
-            android:text="@string/label_numero_serie"
-            android:textColor="@color/text_secondary"
-            android:textSize="11sp"
-            android:textStyle="bold" />
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <EditText
-            android:id="@+id/etSerie"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/bg_input"
-            android:hint="@string/hint_numero_serie"
-            android:inputType="text"
-            android:maxLength="12"
-            android:maxLines="1"
-            android:paddingStart="14dp"
-            android:paddingEnd="14dp"
-            android:textColor="@color/text_primary"
-            android:textColorHint="#6E88A0"
-            android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:letterSpacing="0.1"
+                android:text="ALUMNO REGISTRADO"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnIngresar"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/bg_button_primary"
-            android:letterSpacing="0.08"
-            android:text="@string/ingresar_sistema"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvRegisteredName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:letterSpacing="0.08"
+                android:textColor="@color/fap_blue_light"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="JUAN PÉREZ GARCÍA" />
+
+            <TextView
+                android:id="@+id/tvRegisteredCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:letterSpacing="0.08"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                tools:text="Código: 20241234" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnIngresar"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/bg_button_primary"
+                android:letterSpacing="0.08"
+                android:text="INGRESAR"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvResetStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:letterSpacing="0.05"
+                android:text="Cambiar de alumno / Registrar otro"
+                android:textColor="@color/fap_blue_light"
+                android:textSize="12sp" />
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
